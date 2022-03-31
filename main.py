@@ -37,8 +37,7 @@ def read_from_file_and_search_maxmin():
 
 
 def search_midinmonth():
-    with open('USD.json', 'r') as file:
-        dollar_rates = loads(file.read())
+    dollar_rates = read_from_file_and_search_maxmin()
     sum_month = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     for i in range(len(dollar_rates)):
         month_number = int(datetime.strptime(dollar_rates[i]['date'], '%d.%m.%Y').strftime('%m')) - 1
